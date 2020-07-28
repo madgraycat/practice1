@@ -1,0 +1,16 @@
+---
+# tasks file for Install_Role
+- name: check os_family
+  debug: var=ansible_os_family
+
+- name: Install packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - python-pip
+    - python-dev
+    - libpq-dev
+- name: Install package
+  shell:
+    pip install psycopg2

@@ -1,0 +1,7 @@
+---
+- name: deploy app server
+  hosts: DB
+  become: yes
+  roles:
+    - DB_Role
+    - Install_Role

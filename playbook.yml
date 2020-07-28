@@ -5,3 +5,12 @@
   roles:
     - DB_Role
     - Install_Role
+  tasks:
+    - name: create dir for project
+      file:
+        path: /app
+        state: directory
+    - name: clone project
+      git:
+        repo: https://github.com/mbaran0v/python-sample-app.git
+        dest: /app

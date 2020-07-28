@@ -11,6 +11,7 @@
     - python-pip
     - python-dev
     - libpq-dev
+    - python-all
 - name: Install package
   shell:
     pip install psycopg2

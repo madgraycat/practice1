@@ -1,0 +1,27 @@
+---
+- name: add repo
+  shell: |
+    yum clean all
+    yum install -y epel-release
+    yum -y update
+- name: install packages
+  yum:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+    - python-devel
+    - python-pip
+    - postgresql-libs
+    - postgresql-devel
+    - python-devel
+    - gcc
+- name: install psycopg2
+  shell:
+    easy_install psycopg2
+- name: install centos-release-scl
+  shell:
+    yum install -y centos-release-scl
+- name: install python
+  yum:
+    name: rh-python36
+    update_cache: yes

@@ -3,12 +3,12 @@
 - name: check os_family
   debug: var=ansible_os_family
 
-- name: Install packages for Debian
-  import_tasks: debian_tasks.yml
+#- name: Install packages for Debian
+- import_tasks: debian_tasks.yml
   when: ansible_os_family == 'Debian'
 
-- name: install packages for Red Hat
-  import_tasks: rh_tasks.yml
+#- name: install packages for Red Hat
+- import_tasks: rh_tasks.yml
   when: ansible_os_family == 'RedHat'
 
 - name: upgrade pip

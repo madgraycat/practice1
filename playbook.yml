@@ -23,6 +23,10 @@
       args:
         chdir: "{{ app_path }}"
     - import_tasks: db_tasks.yml
+    - name: install
+      apt:
+        name: psycopg2
+        state: present
     - name: script
       shell: |
         export FLASK_APP=app.py

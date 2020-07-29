@@ -20,6 +20,8 @@
     - name: install requirements
       shell:
         pip install -r requirements.txt
+      args:
+        chdir: "{{ app_path }}"
     - import_tasks: db_tasks.yml
     - name: script
       shell: |

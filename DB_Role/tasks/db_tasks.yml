@@ -1,0 +1,11 @@
+---
+- name: create user
+  postgresql_user:
+    name: worker
+    password: "worker"
+  become_user: postgres
+- name: create DB
+  postgresql_db:
+    name: app
+    owner: worker
+  become_user: postgres

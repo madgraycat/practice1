@@ -1,17 +1,14 @@
 ---
 - name: Install packages for Debian
   apt:
-    name: ['python-pip', 'python3-pip', 'python-dev', 'libpq-dev', 'python-all']
-    #name: "{{ item }}"
+    name: ['python-pip', 'libpq-dev']
+    #name: ['python-pip', 'python3-pip', 'python-dev', 'libpq-dev', 'python-all']
     state: present
     update_cache: yes
-  #with_items:
-  #  - python-pip
-  #  - python3-pip
-  #  - python-dev
-  #  - libpq-dev
-  #  - python-all
-- name: Install package
-  pip:
-    name: psycopg2
-    state: present
+- name: upgrade pip
+  shell: pip install --upgrade pip
+
+#- name: Install package
+#  pip:
+#    name: python-psycopg2
+#    state: present

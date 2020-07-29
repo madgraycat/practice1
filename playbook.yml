@@ -30,5 +30,3 @@
         python3 app.py
       args:
         chdir: "{{ app_path }}"
-
-

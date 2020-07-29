@@ -6,6 +6,7 @@
     update_cache: yes
   with_items:
     - python-pip
+    - python3-pip
     - python-dev
     - libpq-dev
     - python-all

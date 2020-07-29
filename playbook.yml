@@ -6,8 +6,8 @@
     app_path: /app
   become: yes
   roles:
-    - DB_Role
     - Install_Role
+    - DB_Role
   tasks:
     - name: create dir for project
       file:

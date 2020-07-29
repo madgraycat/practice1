@@ -2,22 +2,9 @@
 # tasks file for DB_Role
 - name: check linux family
   debug: var=ansible_os_family
-
-- name: install on debian
-  apt:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - postgresql
-    - postgresql-contrib
+- import_tasks: debian_pack.yml
   when: ansible_os_family == 'Debian'
-- name: install on RedHat
-  yum:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - postgresql=11
-    - postgresql-contrib
+- import_tasks: rh_pack.yml
   when: ansible_os_family == 'RedHat'
 
 - name: create db

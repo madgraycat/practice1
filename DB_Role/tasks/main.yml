@@ -2,8 +2,6 @@
 # tasks file for DB_Role
 - name: check linux family
   debug: var=ansible_os_family
-- import_tasks: debian_pack.yml
-  when: ansible_os_family == 'Debian'
 - import_tasks: rh_pack.yml
   when: ansible_os_family == 'RedHat'
 

@@ -1,7 +1,7 @@
 ---
 - name: Install packages for Debian
   apt:
-    name: ['python-pip', 'libpq-dev']
+    name: ['python-pip', 'libpq-dev', 'postgresql', 'postgresql-contrib']
     #name: ['python-pip', 'python3-pip', 'python-dev', 'libpq-dev', 'python-all']
     state: present
     update_cache: yes

@@ -1,8 +1,0 @@
----
-- name: install postgresql on debian
-  apt:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - postgresql
-    - postgresql-contrib

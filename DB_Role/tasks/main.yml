@@ -18,18 +18,6 @@
     owner: worker
   become_user: postgres
 
-#- name: create db
-#  become: true
-#  become_user: postgres
-#  postgresql_db:
-#    name: app
-#- name: create user
-#  become: true
-#  become_user: postgres
-#  postgresql_user:
-#    db: app
-#    name: worker
-#    password: "worker"
     
 
 

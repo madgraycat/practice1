@@ -7,6 +7,16 @@
 - import_tasks: rh_pack.yml
   when: ansible_os_family == 'RedHat'
 
+- name: create user
+  postgresql_user:
+    name: worker
+    password: "worker"
+  become_user: postgres
+- name: create DB
+  postgresql_db:
+    name: app
+    owner: worker
+  become_user: postgres
 
 #- name: create db
 #  become: true

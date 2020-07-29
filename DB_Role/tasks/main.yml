@@ -7,16 +7,6 @@
 - import_tasks: rh_pack.yml
   when: ansible_os_family == 'RedHat'
 
-- name: create db
-    shell: |
-      sudo -u postgres psql template1
-      create role worker superuser login createdb createrole password 'root';
-      create database thesis with owner root;
-      /q
-
-
-
-
 
 #- name: create db
 #  become: true

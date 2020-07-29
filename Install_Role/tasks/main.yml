@@ -3,7 +3,7 @@
 - name: check os_family
   debug: var=ansible_os_family
 
-#- name: Install packages for Debian
+- name: Install packages for Debian
 - import_tasks: debian_tasks.yml
   when: ansible_os_family == 'Debian'
 

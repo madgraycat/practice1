@@ -10,7 +10,7 @@
 - name: install packages with problems
   apt:
     #name: ['libpq-dev', 'python-psycopg2']
-    name: ['libpq-dev', 'python-psycopg2']
+    name: ['libpq-dev']
 
 #- name: Install package
 #  pip:

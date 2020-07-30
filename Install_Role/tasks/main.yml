@@ -8,9 +8,5 @@
   when: ansible_os_family == 'Debian'
 
 #- name: install packages for Red Hat
-#- import_tasks: rh_tasks.yml
-#  when: ansible_os_family == 'RedHat'
-
-#- name: upgrade pip
-#  shell:
-#    pip install --upgrade pip
+- import_tasks: rh_tasks.yml
+  when: ansible_os_family == 'RedHat'

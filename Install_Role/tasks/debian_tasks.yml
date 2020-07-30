@@ -1,19 +1,11 @@
 ---
 - name: Install packages for Debian
   apt:
-    name: ['python-pip', 'postgresql', 'postgresql-contrib']
-    #name: ['python-pip', 'python3-pip', 'python-dev', 'libpq-dev', 'python-all']
-    state: present
+    name: ['python-pip', 'postgresql', 'postgresql-contrib', 'libpq-dev', 'python-psycopg2']
+    state: latest
     update_cache: yes
 - name: upgrade pip
   shell: pip install --upgrade pip
-- name: install packages with problems
-  apt:
-    #name: ['libpq-dev', 'python-psycopg2']
-    name: ['libpq-dev']
 
-#- name: Install package
-#  pip:
-#    name: python-psycopg2
-#    state: present
+
 

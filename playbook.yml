@@ -7,7 +7,7 @@
   become: yes
   roles:
     - Install_Role
-   # - DB_Role
+    - DB_Role
   tasks:
     - name: create dir for project
       file:
@@ -20,15 +20,6 @@
     - name: install requirements
       shell:
         pip install -r requirements.txt
-      args:
-        chdir: "{{ app_path }}"
-    - import_tasks: db_tasks.yml
-    - name: install
-      apt:
-        name: psycopg2
-        state: present
-    - name: script
-      shell: |
         export FLASK_APP=app.py
         export POSTGRESQL_URL=postgresql://worker:worker@localhost/app
         flask db upgrade
